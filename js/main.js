@@ -1,4 +1,4 @@
-LETTER_DIGIT_REPLACEMENTS = {
+const LETTER_DIGIT_REPLACEMENTS = {
 	'a': 'a',
 	'b': 'b',
 	'c': 'c',
@@ -41,7 +41,17 @@ function getColors() {
 }
 
 function setBgColor() {
-	$("body").css("background-color", $("#bg-color").val());
+	let color = $("#bg-color-select").val()
+	$("body").css("background-color", color)
+
+	let textColor
+	if (color == "#ffffff") {
+		textColor = "black"
+	}
+	else {
+		textColor = "white"
+	}
+	$("body").css("color", textColor)
 }
 
 setBgColor()
